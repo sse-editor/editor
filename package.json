@@ -13,6 +13,7 @@
   "author": "SSE World",
   "license": "MIT",
   "devDependencies": {
+    "@babel/register": "^7.25.9",
     "@editorjs/code": "^2.9.3",
     "@editorjs/delimiter": "^1.4.2",
     "@editorjs/header": "^2.8.8",
@@ -21,6 +22,11 @@
     "@sse-editor/icons": "^1.0.1",
     "@types/node": "^22.13.4",
     "core-js": "^3.40.0",
+    "html-janitor": "^2.0.4",
+    "nanoid": "^5.1.0",
+    "postcss-apply": "^0.12.0",
+    "postcss-nested": "^7.0.2",
+    "postcss-preset-env": "^10.1.4",
     "rollup-plugin-license": "^3.5.3",
     "vite": "^6.1.0",
     "vite-plugin-css-injected-by-js": "^3.5.2"
