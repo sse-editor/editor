@@ -15,12 +15,9 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/register": "^7.25.9",
-    "@editorjs/code": "^2.9.3",
-    "@editorjs/delimiter": "^1.4.2",
-    "@editorjs/header": "^2.8.8",
-    "@editorjs/paragraph": "^2.11.7",
     "@editorjs/simple-image": "^1.6.0",
     "@sse-editor/icons": "^1.0.1",
+    "@sse-editor/plugins": "^1.0.0",
     "@sse-editor/shortcuts": "^1.0.0",
     "@types/node": "^22.13.4",
     "core-js": "^3.40.0",
