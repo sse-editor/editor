@@ -1,4 +1,4 @@
-import { Paragraph } from '@sse-editor/plugins';
+import Paragraph from '@sse-editor/plugins/paragraph';
 import Module from '../__module';
 import * as _ from '../utils';
 import type { SanitizerConfig, ToolConfig, ToolConstructable, ToolSettings } from '@sse-editor/types';

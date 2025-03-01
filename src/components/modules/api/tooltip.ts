@@ -1,5 +1,5 @@
 import type { Tooltip as ITooltip } from '@sse-editor/types/api';
-import type { TooltipOptions, TooltipContent } from 'codex-tooltip/types';
+import type { TooltipOptions, TooltipContent } from "@sse-editor/types/codex-tooltip";
 import Module from '../../__module';
 import type { ModuleConfig } from '../../../types-internal/module-config';
 import * as tooltip from '../../utils/tooltip';

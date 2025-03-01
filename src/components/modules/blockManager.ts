@@ -16,7 +16,7 @@ import type {
   BlockMutationEventMap,
   BlockMutationType,
 } from "@sse-editor/types/events/block";
-// import { BlockRemovedMutationType } from '@sse-editor/types/events/block/BlockRemoved';
+import { BlockRemovedMutationType } from '@sse-editor/types/events/block/BlockRemoved';
 import { BlockAddedMutationType } from "@sse-editor/types/events/block/BlockAdded";
 import { BlockMovedMutationType } from "@sse-editor/types/events/block/BlockMoved";
 import { BlockChangedMutationType } from "@sse-editor/types/events/block/BlockChanged";
@@ -24,8 +24,6 @@ import { BlockChanged } from "../events";
 import { clean, sanitizeBlocks } from "../utils/sanitizer";
 import { convertStringToBlockData, isBlockConvertable } from "../utils/blocks";
 import PromiseQueue from "../utils/promise-queue";
-
-const BlockRemovedMutationType = "block-removed";
 
 /**
  * @typedef {BlockManager} BlockManager

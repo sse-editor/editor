@@ -3,7 +3,7 @@
  * Use external module CodeX Tooltip
  */
 import CodeXTooltips from 'codex-tooltip';
-import type { TooltipOptions, TooltipContent } from 'codex-tooltip/types';
+import type { TooltipOptions, TooltipContent } from '@sse-editor/types/codex-tooltip';
 
 /**
  * Tooltips lib: CodeX Tooltips

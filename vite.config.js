@@ -27,39 +27,5 @@ export default {
     VERSION: JSON.stringify(VERSION),
   },
 
-  server: {
-    port: 3303,
-    open: true,
-  },
-
-  rollupOptions: {
-    plugins: [
-      license({
-        thirdParty: {
-          allow: {
-            test: (dependency) => {
-              // Manually allow html-janitor (https://github.com/guardian/html-janitor/blob/master/LICENSE)
-              // because of missing LICENSE file in published package
-              if (dependency.name === "html-janitor") {
-                return true;
-              }
-
-              // Return false for unlicensed dependencies.
-              if (!dependency.license) {
-                return false;
-              }
-
-              // Allow MIT and Apache-2.0 licenses.
-              return ["MIT", "Apache-2.0"].includes(dependency.license);
-            },
-            failOnUnlicensed: true,
-            failOnViolation: true,
-          },
-          output: path.resolve(__dirname, "dist", "vendor.LICENSE.txt"),
-        },
-      }),
-    ],
-  },
-
   plugins: [cssInjectedByJsPlugin()],
 };

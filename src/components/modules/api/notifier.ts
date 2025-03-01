@@ -1,6 +1,6 @@
 import type { Notifier as INotifier } from '@sse-editor/types/api';
 import Notifier from '../../utils/notifier';
-import type { ConfirmNotifierOptions, NotifierOptions, PromptNotifierOptions } from 'codex-notifier';
+import type { ConfirmNotifierOptions, NotifierOptions, PromptNotifierOptions } from '@sse-editor/types/codex-notifier';
 import Module from '../../__module';
 import type { ModuleConfig } from '../../../types-internal/module-config';
 
