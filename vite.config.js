@@ -1,6 +1,5 @@
 import path from "path";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
-import license from "rollup-plugin-license";
 import * as pkg from "./package.json";
 
 const NODE_ENV = process.argv.mode || "development";
