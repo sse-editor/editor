@@ -21,7 +21,7 @@
     "@sse-editor/plugins": "^1.2.0",
     "@sse-editor/shortcuts": "^1.0.0",
     "@sse-editor/types": "^1.1.0",
-    "@types/node": "^22.13.4",
+    "@types/node": "^22.13.8",
     "codex-notifier": "^1.1.2",
     "core-js": "^3.40.0",
     "html-janitor": "^2.0.4",
