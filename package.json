@@ -5,6 +5,7 @@
   "main": "dist/sseeditor.umd.js",
   "module": "dist/sseeditor.mjs",
   "types": "./types/index.d.ts",
+  "files": ["dist", "types"],
   "scripts": {
     "dev": "vite",
     "build": "vite build --mode production"
