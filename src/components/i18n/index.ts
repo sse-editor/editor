@@ -1,5 +1,5 @@
 import defaultDictionary from './locales/en/messages.json';
-import type { I18nDictionary, Dictionary } from '@sse-editor/types';
+import type { I18nDictionary, Dictionary } from '@sse-editor/types/configs';
 import type { LeavesDictKeys } from '../../types-internal/i18n-internal-namespace';
 
 /**

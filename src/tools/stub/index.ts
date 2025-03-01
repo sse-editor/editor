@@ -1,11 +1,6 @@
-import $ from "../../components/dom";
-import type {
-  API,
-  BlockTool,
-  BlockToolConstructorOptions,
-  BlockToolData,
-} from "@sse-editor/types";
-import { IconWarning } from "@sse-editor/icons";
+import $ from '../../components/dom';
+import type { API, BlockTool, BlockToolConstructorOptions, BlockToolData } from '@sse-editor/types';
+import { IconWarning } from '@sse-editor/icons';
 
 export interface StubData extends BlockToolData {
   title: string;
@@ -28,10 +23,10 @@ export default class Stub implements BlockTool {
    * @type {{wrapper: string, info: string, title: string, subtitle: string}}
    */
   private CSS = {
-    wrapper: "ce-stub",
-    info: "ce-stub__info",
-    title: "ce-stub__title",
-    subtitle: "ce-stub__subtitle",
+    wrapper: 'ce-stub',
+    info: 'ce-stub__info',
+    title: 'ce-stub__title',
+    subtitle: 'ce-stub__subtitle',
   };
 
   /**
@@ -66,10 +61,8 @@ export default class Stub implements BlockTool {
    */
   constructor({ data, api }: BlockToolConstructorOptions<StubData>) {
     this.api = api;
-    this.title = data.title || this.api.i18n.t("Error");
-    this.subtitle = this.api.i18n.t(
-      "The block can not be displayed correctly."
-    );
+    this.title = data.title || this.api.i18n.t('Error');
+    this.subtitle = this.api.i18n.t('The block can not be displayed correctly.');
     this.savedData = data.savedData;
 
     this.wrapper = this.make();
@@ -99,13 +92,13 @@ export default class Stub implements BlockTool {
    * @returns {HTMLElement}
    */
   private make(): HTMLElement {
-    const wrapper = $.make("div", this.CSS.wrapper);
+    const wrapper = $.make('div', this.CSS.wrapper);
     const icon = IconWarning;
-    const infoContainer = $.make("div", this.CSS.info);
-    const title = $.make("div", this.CSS.title, {
+    const infoContainer = $.make('div', this.CSS.info);
+    const title = $.make('div', this.CSS.title, {
       textContent: this.title,
     });
-    const subtitle = $.make("div", this.CSS.subtitle, {
+    const subtitle = $.make('div', this.CSS.subtitle, {
       textContent: this.subtitle,
     });
 

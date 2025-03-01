@@ -1,6 +1,6 @@
-import defaultDictionary from "./locales/en/messages.json";
-import type { DictNamespaces } from "../../types-internal/i18n-internal-namespace";
-import { isObject, isString } from "../utils";
+import defaultDictionary from './locales/en/messages.json';
+import type { DictNamespaces } from '../../types-internal/i18n-internal-namespace';
+import { isObject, isString } from '../utils';
 
 /**
  * Evaluate messages dictionary and return object for namespace chaining
@@ -8,10 +8,7 @@ import { isObject, isString } from "../utils";
  * @param dict - Messages dictionary
  * @param [keyPath] - subsection path (used in recursive call)
  */
-function getNamespaces(
-  dict: object,
-  keyPath?: string
-): DictNamespaces<typeof defaultDictionary> {
+function getNamespaces(dict: object, keyPath?: string): DictNamespaces<typeof defaultDictionary> {
   const result = {};
 
   Object.entries(dict).forEach(([key, section]) => {
