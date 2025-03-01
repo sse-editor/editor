@@ -25,7 +25,7 @@
     "codex-notifier": "^1.1.2",
     "core-js": "^3.40.0",
     "html-janitor": "^2.0.4",
-    "nanoid": "^5.1.0",
+    "nanoid": "^5.1.2",
     "vite": "^6.1.0",
     "vite-plugin-css-injected-by-js": "^3.5.2"
   },
