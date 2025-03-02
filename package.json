@@ -1,11 +1,14 @@
 {
   "name": "@sse-editor/editor.js",
-  "version": "1.0.0-alpha-1",
+  "version": "1.0.0",
   "description": "SSE Editor.js — open source block-style WYSIWYG editor with JSON and MD output",
   "main": "dist/sseeditor.umd.js",
   "module": "dist/sseeditor.mjs",
   "types": "./types/index.d.ts",
-  "files": ["dist", "types"],
+  "files": [
+    "dist",
+    "types"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build --mode production"
@@ -18,6 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/register": "^7.25.9",
+    "@sse-editor/caret": "^1.0.1",
     "@sse-editor/icons": "^1.0.1",
     "@sse-editor/plugins": "^1.2.0",
     "@sse-editor/shortcuts": "^1.0.0",
@@ -31,7 +35,6 @@
     "vite-plugin-css-injected-by-js": "^3.5.2"
   },
   "dependencies": {
-    "@editorjs/caret": "^1.0.3",
     "codex-tooltip": "^1.0.5"
   }
 }
