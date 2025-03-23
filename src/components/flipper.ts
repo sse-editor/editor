@@ -1,5 +1,5 @@
-import DomIterator from './domIterator';
-import * as _ from './utils';
+import DomIterator from "./domIterator";
+import * as _ from "./utils";
 
 /**
  * Flipper construction options
@@ -123,7 +123,7 @@ export default class Flipper {
      * - prevents plugins inner keydown handlers from being called while keyboard navigation
      * - otherwise this handler will be called at the moment it is attached which causes false flipper firing (see https://techread.me/js-addeventlistener-fires-for-past-events/)
      */
-    document.addEventListener('keydown', this.onKeyDown, true);
+    document.addEventListener("keydown", this.onKeyDown, true);
   }
 
   /**
@@ -133,7 +133,7 @@ export default class Flipper {
     this.activated = false;
     this.dropCursor();
 
-    document.removeEventListener('keydown', this.onKeyDown);
+    document.removeEventListener("keydown", this.onKeyDown);
   }
 
   /**
@@ -182,7 +182,7 @@ export default class Flipper {
    * @param cb - function to stop executing
    */
   public removeOnFlip(cb: () => void): void {
-    this.flipCallbacks = this.flipCallbacks.filter(fn => fn !== cb);
+    this.flipCallbacks = this.flipCallbacks.filter((fn) => fn !== cb);
   }
 
   /**
@@ -199,10 +199,20 @@ export default class Flipper {
    *
    * @param event - keydown event
    */
-  private onKeyDown = (event): void => {
+  private onKeyDown = (event: KeyboardEvent): void => {
     const isReady = this.isEventReadyForHandling(event);
 
     if (!isReady) {
+      return;
+    }
+
+    const isShiftKey = event.shiftKey;
+
+    /**
+     * If shift key is pressed, do nothing
+     * Allows to select next/prev lines of text using keyboard
+     */
+    if (isShiftKey === true) {
       return;
     }
 
@@ -251,7 +261,9 @@ export default class Flipper {
   private handleTabPress(event: KeyboardEvent): void {
     /** this property defines leaf direction */
     const shiftKey = event.shiftKey,
-        direction = shiftKey ? DomIterator.directions.LEFT : DomIterator.directions.RIGHT;
+      direction = shiftKey
+        ? DomIterator.directions.LEFT
+        : DomIterator.directions.RIGHT;
 
     switch (direction) {
       case DomIterator.directions.RIGHT:
@@ -295,6 +307,6 @@ export default class Flipper {
       this.iterator.currentItem.scrollIntoViewIfNeeded();
     }
 
-    this.flipCallbacks.forEach(cb => cb());
+    this.flipCallbacks.forEach((cb) => cb());
   }
 }
