@@ -41,11 +41,21 @@ jobs:
   release:
     needs: publish
     runs-on: ubuntu-latest
+
     permissions:
-      contents: read
       id-token: write
+      contents: write
+      actions: read
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
       - name: Version
         id: version
         run: |
@@ -56,14 +66,22 @@ jobs:
           echo "version=${version}" >> $GITHUB_OUTPUT
           echo "major=${major}" >> $GITHUB_OUTPUT
 
-      - uses: release-drafter/release-drafter@master
+      - name: Create Release
+        uses: release-drafter/release-drafter@master
         with:
           version: ${{steps.version.outputs.version}}
           publish: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Force Update Major Tag
+      # - name: Force Update Major Tag
+      #   run: |
+      #     git tag v${{ steps.version.outputs.major }} ${{ steps.version.outputs.tag }} -f
+      #     git push origin refs/tags/v${{ steps.version.outputs.major }} -f
+
+      - name: Tag the release
         run: |
-          git tag v${{ steps.version.outputs.major }} ${{ steps.version.outputs.tag }} -f
-          git push origin refs/tags/v${{ steps.version.outputs.major }} -f
+          git config --global user.name "Github Actions"
+          git config --global user.email "github-actions@github.com"
+          git tag v${{ github.sha }}
+          git push origin refs/tags/v${{ github.sha }}
