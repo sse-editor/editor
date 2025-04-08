@@ -23,7 +23,7 @@
     "@babel/register": "^7.25.9",
     "@sse-editor/caret": "^1.0.1",
     "@sse-editor/icons": "^1.1.4",
-    "@sse-editor/plugins": "^1.4.0",
+    "@sse-editor/plugins": "^2.0.0",
     "@sse-editor/shortcuts": "^1.0.0",
     "@sse-editor/types": "^1.1.0",
     "@types/node": "^22.13.8",
