@@ -1,6 +1,6 @@
 {
   "name": "@sse-editor/editor.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "SSE Editor.js — open source block-style WYSIWYG editor with JSON and MD output",
   "main": "dist/sseeditor.umd.js",
   "module": "dist/sseeditor.mjs",
@@ -22,7 +22,7 @@
   "devDependencies": {
     "@babel/register": "^7.25.9",
     "@sse-editor/caret": "^1.0.1",
-    "@sse-editor/icons": "^1.1.1",
+    "@sse-editor/icons": "^1.1.4",
     "@sse-editor/plugins": "^1.4.0",
     "@sse-editor/shortcuts": "^1.0.0",
     "@sse-editor/types": "^1.1.0",
